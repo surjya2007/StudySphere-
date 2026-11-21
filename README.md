@@ -93,7 +93,7 @@ No frameworks or package installations are required.
 📸 Screenshots
 
 <p align="center">
-  <img src="C:\Users\Surjyakanta\OneDrive\Pictures\Screenshots\Screenshot 2026-11-21 092053.png">
+  <img src="Screenshot.png">
 </p>
 -->👨‍💻 Developer
 
