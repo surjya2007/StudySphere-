@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Student Toolkit: a free CGPA calculator, attendance planner and focus timer for students.">
+<title>Student Toolkit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div>
+
+<header class="top">
+  <a class="brand" href="#">Study<span>Kit</span></a>
+  <button class="theme" id="theme" aria-label="Toggle dark mode">&#9680;</button>
+</header>
+
+<section class="hero">
+  <h1>Your semester,<br>under control.</h1>
+  <p>Work out your CGPA, know exactly how many classes you can skip, and focus in timed sessions. Free, fast, and nothing to sign up for.</p>
+</section>
+
+<nav class="tabs" id="tabs" role="tablist">
+  <span class="pill" id="pill"></span>
+  <button role="tab" data-t="cgpa" class="on">CGPA</button>
+  <button role="tab" data-t="att">Attendance</button>
+  <button role="tab" data-t="timer">Focus timer</button>
+</nav>
+
+<main>
+  <section class="panel on" id="cgpa">
+    <h2>CGPA calculator</h2>
+    <p class="sub">Enter each subject's credits and grade points (0 to 10).</p>
+    <div id="subjects"></div>
+    <div class="actions">
+      <button class="btn ghost" id="addSub">+ Add subject</button>
+      <button class="btn" id="calcCgpa">Calculate</button>
+    </div>
+    <div class="result" id="cgpaOut"><div class="num" id="cgpaNum">--</div><div id="cgpaTxt">Your result appears here.</div></div>
+  </section>
+
+  <section class="panel" id="att">
+    <h2>Attendance planner</h2>
+    <p class="sub">See how many classes you can still miss, or how many you need to catch up.</p>
+    <div class="grid3">
+      <div><label for="held">Classes held</label><input id="held" type="number" min="0" placeholder="40"></div>
+      <div><label for="attended">Classes attended</label><input id="attended" type="number" min="0" placeholder="32"></div>
+      <div><label for="req">Required %</label><input id="req" type="number" min="1" max="100" value="75"></div>
+    </div>
+    <div class="actions"><button class="btn" id="calcAtt">Check attendance</button></div>
+    <div class="result" id="attOut">
+      <div class="bar"><i id="attBar"></i></div>
+      <div id="attTxt">Fill in the numbers above.</div>
+    </div>
+  </section>
+
+  <section class="panel" id="timer">
+    <h2>Focus timer</h2>
+    <p class="sub">Pick a length, start, and stay on one thing.</p>
+    <div class="ringwrap">
+      <svg viewBox="0 0 200 200" class="ring" aria-hidden="true">
+        <circle cx="100" cy="100" r="90" class="track"/>
+        <circle cx="100" cy="100" r="90" class="prog" id="prog"/>
+      </svg>
+      <div class="clock" id="clock">25:00</div>
+    </div>
+    <div class="chips" id="chips">
+      <button data-m="15">15 min</button><button data-m="25" class="on">25 min</button><button data-m="45">45 min</button>
+    </div>
+    <div class="actions center">
+      <button class="btn" id="start">Start</button>
+      <button class="btn ghost" id="reset">Reset</button>
+    </div>
+    <p class="count" id="timerOut">Sessions completed today: 0</p>
+  </section>
+</main>
+
+<footer>Built by Surjyakanta Dhal &middot; HTML, CSS and JavaScript</footer>
+<script src="script.js"></script>
+</body>
+</html>
 
